@@ -6,6 +6,7 @@ const deleteImg = (imgUrl) => {
   const fieldName = imgSplited.at(-1).split(".");
 
   const public_id = `${folderName}/${fieldName[0]}`;
+  console.log(public_id);
 
   cloudinary.uploader.destroy(public_id, () => {
     console.log("Image deleted");
