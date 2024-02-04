@@ -4,7 +4,7 @@ const { deleteImg } = require("../../utils/deleteImgCloudinary");
 //Get All
 const getAllAttendees = async (req, res, next) => {
   try {
-    const allAttendees = await Attendant.find();
+    const allAttendees = await Attendant.find().populate('confirmedEvents');
     return res.status(200).json(allAttendees);
   } catch (error) {
     return res.status(404).json("Attendees not found");
@@ -15,7 +15,7 @@ const getAllAttendees = async (req, res, next) => {
 const getAttendantById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const attendant = await Attendant.findById(id);
+    const attendant = await Attendant.findById(id).populate('confirmedEvents');
     if (attendant) {
       return res.status(200).json(attendant);
     } else {
@@ -42,7 +42,6 @@ const createAttendant = async (req, res, next) => {
       email: req.body.email,
     });
     if (attendantDuplicated) {
-      newAttendant.isRegister = true;
       return res.status(400).json("This attendant already exists");
     }
     if (req.files && req.files.avatar) {

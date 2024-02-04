@@ -9,5 +9,6 @@ eventRouter.post('/user/events', uploadPosters.fields([{name: "poster"}]), event
 eventRouter.patch('/update-poster/:id', uploadPosters.fields([{name: "poster"}]), eventController.updatePoster);
 eventRouter.delete('/delete-event/:id', eventController.removeEvent);
 eventRouter.post('/user/attendees/:eventId/:userId', eventController.userConfirmation);
+eventRouter.post('/attendant/attendees/:eventId/:attendantId', eventController.attendantConfirmation);
 
 module.exports = eventRouter;

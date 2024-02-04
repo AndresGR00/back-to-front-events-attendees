@@ -3,7 +3,8 @@ const bcrypt = require("bcrypt");
 const { generateSign } = require("../../config/jwt");
 const { deleteImg } = require("../../utils/deleteImgCloudinary");
 const { defaultAvatar } = require("../../utils/defaultPictures");
-
+const Attendant = require("../models/attendant.model");
+const Event = require('../models/event.model');
 //Get All
 const getAllUser = async (req, res, next) => {
   try {
@@ -17,12 +18,41 @@ const getAllUser = async (req, res, next) => {
 //Register - Only allows non admin users to register
 const registerUser = async (req, res, next) => {
   try {
+    const existingAttendant = await Attendant.findOne({ email: req.body.email });
+    if(existingAttendant){
+      const newUser = new User({
+        name: existingAttendant.name,
+        email: existingAttendant.email,
+        password: req.body.password,
+        avatar: req.body.avatar || existingAttendant.avatar,
+        rol: "isUser",
+        confirmedEvents: existingAttendant.confirmedEvents,
+      });
+      const createNewUser = await newUser.save();
+
+      try {
+        await Attendant.deleteOne({ _id: existingAttendant._id });
+      } catch (removeError) {
+        return res.status(500).json({ error: 'Error removing existing Attendant', details: removeError.message });
+      }
+      
+      const eventsToUpdate = await Event.find({ attendeesConfirmed: existingAttendant._id }); //Falla Aquí
+      console.log('Events to update:', eventsToUpdate);
+      for (const event of eventsToUpdate) {
+        event.attendeesConfirmed.pull(existingAttendant._id);
+        event.usersConfirmed.push(createNewUser._id);
+        await event.save();
+      }
+      
+      return res.status(201).json(createNewUser);
+    }
+    
     const newUser = new User({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       avatar: req.body.avatar,
-      rol: "isUser" /* req.body.rol, */,
+      rol: /* "isUser" */ req.body.rol,
       confirmedEvents: req.body.confirmedEvents
     });
     const userDuplicated = await User.findOne({ email: req.body.email });
@@ -35,6 +65,7 @@ const registerUser = async (req, res, next) => {
     const createNewUser = await newUser.save();
     return res.status(201).json(createNewUser);
   } catch (error) {
+    console.log(error)
     return res.status(404).json("There was an error registering the user");
   }
 };

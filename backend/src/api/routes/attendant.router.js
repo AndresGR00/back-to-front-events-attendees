@@ -6,7 +6,7 @@ const { uploadAvatars } = require('../../middlewares/uploadImgCloudinary');
 attendantRouter.get('/attendees', attendantController.getAllAttendees);
 attendantRouter.get('/attendees/:id', attendantController.getAttendantById);
 attendantRouter.post('/create-attendant', uploadAvatars.fields([{name: "avatar"}]), attendantController.createAttendant);
-attendantRouter.patch('/update-avatar-attendant', uploadAvatars.fields([{name: "avatar"}]), attendantController.updateAvatarAttendant);
-attendantRouter.delete('/delete-attendant', attendantController.removeAttendant);
+attendantRouter.patch('/update-avatar-attendant/:id', uploadAvatars.fields([{name: "avatar"}]), attendantController.updateAvatarAttendant);
+attendantRouter.delete('/delete-attendant/:id', attendantController.removeAttendant);
 
 module.exports = attendantRouter

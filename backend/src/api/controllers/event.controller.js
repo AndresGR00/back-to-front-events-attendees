@@ -2,11 +2,12 @@ const { defaultPoster } = require("../../utils/defaultPictures");
 const Event = require("../models/event.model");
 const User = require("../models/user.model");
 const { deleteImg } = require("../../utils/deleteImgCloudinary");
+const Attendant = require("../models/attendant.model");
 
 //Get All
 const getAllEvents = async (req, res, next) => {
   try {
-    const allEvents = await Event.find().populate('usersConfirmed');
+    const allEvents = await Event.find().populate('usersConfirmed').populate('attendeesConfirmed');
     return res.status(200).json(allEvents);
   } catch (error) {
     return res.status(404).json("Events not found");
@@ -17,7 +18,7 @@ const getAllEvents = async (req, res, next) => {
 const getEventById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const event = await Event.findById(id).populate('usersConfirmed');
+    const event = await Event.findById(id).populate('usersConfirmed').populate('attendeesConfirmed');
     if (event) {
       return res.status(200).json(event);
     } else {
@@ -109,6 +110,32 @@ const userConfirmation = async (req, res, next) => {
   }
 };
 
+//Post - Attendant confirma su asistencia al evento
+const attendantConfirmation = async (req, res, next) => {
+  try {
+    const { eventId, attendantId } = req.params;
+    const event = await Event.findById(eventId);
+    if (!event) {
+      return res.status(404).json("Event not found");
+    }
+    if (event.attendeesConfirmed.includes(attendantId)) {
+      return res
+        .status(400)
+        .json("This attendand is already registered for the event");
+    }
+    event.attendeesConfirmed.push(attendantId);
+    await event.save();
+
+    const attendant = await Attendant.findById(attendantId);
+    attendant.confirmedEvents.push(eventId);
+    await attendant.save();
+
+    return res.status(200).json("Attendant signed up for the event");
+  } catch (error) {
+    return res.status(500).json("Error when signing up for the event");
+  }
+};
+
 //Delete
 const removeEvent = async (req, res, next) => {
   try {
@@ -127,5 +154,6 @@ module.exports = {
   createEvent,
   updatePoster,
   userConfirmation,
+  attendantConfirmation,
   removeEvent,
 };
