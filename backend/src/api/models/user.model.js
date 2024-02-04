@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
       default: "isUser",
     },
+    confirmedEvents: [{ type: mongoose.Types.ObjectId, ref: "Event" }],
   },
   {
     timestamps: true,

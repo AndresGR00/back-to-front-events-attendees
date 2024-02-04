@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { defaultPoster } = require('../../utils/defaultPictures');
 
 const eventSchema = new mongoose.Schema(
   {
@@ -6,7 +7,9 @@ const eventSchema = new mongoose.Schema(
     date: { type: Date, required: true, trim: true },
     location: { type: String, required: true, trim: true },
     description: { type: String, required: true, trim: true },
-    poster: { type: String, required: true, trim: true, default: "#" },
+    poster: { type: String, required: true, trim: true, default: defaultPoster },
+    usersConfirmed: [{ type: mongoose.Types.ObjectId, ref: "User" }],
+    attendeesConfirmed: [{ type: mongoose.Types.ObjectId, ref: "Attendant" }]
   },
   {
     timestamps: true,

@@ -7,7 +7,7 @@ const { defaultAvatar } = require("../../utils/defaultPictures");
 //Get All
 const getAllUser = async (req, res, next) => {
   try {
-    const allUsers = await User.find();
+    const allUsers = await User.find().populate('confirmedEvents');
     return res.status(200).json(allUsers);
   } catch (error) {
     return res.status(404).json("Users not found");
@@ -23,6 +23,7 @@ const registerUser = async (req, res, next) => {
       password: req.body.password,
       avatar: req.body.avatar,
       rol: "isUser" /* req.body.rol, */,
+      confirmedEvents: req.body.confirmedEvents
     });
     const userDuplicated = await User.findOne({ email: req.body.email });
     if (userDuplicated) {
