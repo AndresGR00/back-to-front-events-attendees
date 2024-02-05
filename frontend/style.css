@@ -1,0 +1,33 @@
+:root {
+  font-family: Arial, system-ui, Avenir, Helvetica, Inter, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --ev-main-color: #1d69ab;
+  --ev-white-color: #FFF;
+  --ev-purple-color: #E2CFEA;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,20 @@
+.ev-bottom-header-container{
+    height: 2.5rem;
+    background-color: var(--ev-main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ev-bottom-header-container p{
+    color: var(--ev-white-color);
+}
+.ev-bottom-header-container a{
+    color: var(--ev-white-color);
+    text-decoration: underline;
+}
+
+@media screen and (max-width:575px){
+    .ev-bottom-header-container p{
+        font-size: .9rem;
+    }
+}

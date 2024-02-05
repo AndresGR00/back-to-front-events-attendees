@@ -37,7 +37,6 @@ const registerUser = async (req, res, next) => {
       }
       
       const eventsToUpdate = await Event.find({ attendeesConfirmed: existingAttendant._id }); //Falla Aquí
-      console.log('Events to update:', eventsToUpdate);
       for (const event of eventsToUpdate) {
         event.attendeesConfirmed.pull(existingAttendant._id);
         event.usersConfirmed.push(createNewUser._id);
@@ -65,7 +64,6 @@ const registerUser = async (req, res, next) => {
     const createNewUser = await newUser.save();
     return res.status(201).json(createNewUser);
   } catch (error) {
-    console.log(error)
     return res.status(404).json("There was an error registering the user");
   }
 };
