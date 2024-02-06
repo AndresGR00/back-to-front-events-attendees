@@ -20,7 +20,7 @@ export const EventCard = (poster, title, description, location, date, usersConfi
       <p>${usersConfirmed}</p>
       <p>${attendeesConfirmed}</p>
     </div>
-    <a href="#" class="join">Apuntarse +</a>
+    <a href="#" class="join">Register</a>
   </div>
 </div>`;
 };

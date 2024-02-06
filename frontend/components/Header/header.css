@@ -8,7 +8,7 @@ header {
   -webkit-box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.45);
   box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.45);
-  background-color: var(--ev-white-color);
+  background-color: var(--ev-secondary-color);
 }
 .ev-logo-container {
   display: flex;
@@ -24,30 +24,30 @@ header {
 }
 .ev-header-buttons {
   display: flex;
-  gap: 1rem;
+  gap: .7rem;
 }
 .ev-login-button,
 .ev-signin-button {
   padding: 0.6rem 1.2rem;
-  border-radius: 500px;
+  border-radius: 10px;
+  font-weight: 600;
 }
 .ev-login-button {
-  border: solid 2px var(--ev-main-color);
-  color: var(--ev-main-color);
-}
-.ev-login-button:hover {
-  background-color: var(--ev-main-color);
+  border: solid 2px transparent;
   color: var(--ev-white-color);
 }
+.ev-login-button:hover {
+  color: var(--ev-white-color);
+  text-decoration: underline;
+}
 .ev-signin-button {
-  border: solid 2px var(--ev-main-color);
-  background-color: var(--ev-main-color);
+  border: solid 2px var(--ev-maroon-color);
+  background-color: var(--ev-maroon-color);
   color: var(--ev-white-color);
 }
 .ev-signin-button:hover {
   border: solid 2px var(--ev-main-color);
-  background-color: var(--ev-white-color);
-  color: var(--ev-main-color);
+  background-color: var(--ev-main-color);
 }
 
 @media screen and (max-width:575px){

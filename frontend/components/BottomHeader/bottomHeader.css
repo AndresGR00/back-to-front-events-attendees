@@ -12,6 +12,10 @@
     color: var(--ev-white-color);
     text-decoration: underline;
 }
+.ev-bottom-header-container a:hover{
+    color: var(--ev-orange-color);
+    text-decoration: underline;
+}
 
 @media screen and (max-width:575px){
     .ev-bottom-header-container p{
