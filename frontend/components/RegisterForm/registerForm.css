@@ -1,0 +1,43 @@
+.ev-register-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 2.7rem auto;
+  gap: 1rem;
+  background-color: var(--ev-secondary-color);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.ev-register-form input {
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: solid 2px var(--ev-main-color);
+  background-color: var(--ev-main-color);
+  color: var(--ev-orange-color);
+}
+ev-register-form input:focus {
+  border: solid 2px var(--ev-secondary-color);
+}
+.ev-register-form input::placeholder {
+  color: var(--ev-orange-color);
+}
+.ev-register-form button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: var(--ev-maroon-color);
+  border: solid 2px var(--ev-maroon-color);
+  color: var(--ev-white-color);
+  cursor: pointer;
+}
+.ev-register-form button:hover {
+  background-color: var(--ev-main-color);
+  border: solid 2px var(--ev-main-color);
+}
+.ev-register-form label {
+  color: var(--ev-white-color);
+  font-size: 0.75rem;
+  margin-bottom: -0.6rem;
+  padding-left: 0.1rem;
+}

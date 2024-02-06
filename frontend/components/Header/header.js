@@ -2,10 +2,6 @@ import "./header.css";
 import { logo } from "../../data/data";
 import { RegisterForm } from "../RegisterForm/registerForm";
 
-const signinFormFunction = () => {
-  console.log("Formulario para hacer registro");
-};
-
 const sayHello = () => {
   alert("Hello");
 };
@@ -19,6 +15,7 @@ export const Header = () => {
       </a>
     </div>
     <div class="ev-header-buttons">
+      <a href="#" class="ev-login-button">Logout</a>
       <a href="#" class="ev-login-button">Login</a>
       <a href="#" class="ev-signin-button">Sign In</a>
     </div>
