@@ -1,6 +1,14 @@
 import "./eventCard.css";
 
-export const EventCard = (poster, title, description, location, date, usersConfirmed, attendeesConfirmed) => {
+export const EventCard = (
+  poster,
+  title,
+  description,
+  location,
+  date,
+  usersConfirmed,
+  attendeesConfirmed
+) => {
   const eventsContainer = document.querySelector(".ev-events-container");
   eventsContainer.innerHTML += `
   <div class="ev-event-card">

@@ -1,11 +1,13 @@
 import "./header.css";
 import { logo } from "../../data/data";
+import { RegisterForm } from "../RegisterForm/registerForm";
 
-const loginFormFunction = () => {
-  console.log("Formulario para hacer login");
-};
 const signinFormFunction = () => {
   console.log("Formulario para hacer registro");
+};
+
+const sayHello = () => {
+  alert("Hello");
 };
 
 export const Header = () => {
@@ -23,8 +25,8 @@ export const Header = () => {
   </header>`;
 
   const loginButton = document.querySelector(".ev-login-button");
-  loginButton.addEventListener("click", loginFormFunction);
+  loginButton.addEventListener("click", sayHello);
 
   const signinButton = document.querySelector(".ev-signin-button");
-  signinButton.addEventListener("click", signinFormFunction);
+  signinButton.addEventListener("click", RegisterForm);
 };

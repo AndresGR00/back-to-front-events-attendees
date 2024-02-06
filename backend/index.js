@@ -2,10 +2,17 @@ require("dotenv").config();
 const express = require("express");
 const { connectDB } = require('./src/config/db');
 const mainRouter = require("./src/api/routes/main.router");
+const cors = require('cors');
+
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,PUT,POST,DELETE',
+};
 
 const app = express();
 app.disable("x-powered-by");
 app.use(express.json());
+app.use(cors(corsOptions))
 
 connectDB();
 
