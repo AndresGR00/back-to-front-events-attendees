@@ -16,7 +16,8 @@ export const printEvents = async () => {
         event.location,
         formattedDate,
         event.usersConfirmed,
-        event.attendeesConfirmed
+        event.attendeesConfirmed,
+        event._id,
       );
     }
   } catch (error) {

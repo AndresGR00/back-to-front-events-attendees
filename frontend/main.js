@@ -5,8 +5,14 @@ import { EventsContainer } from "./components/EventsContainer/EventsContainer";
 import { printEvents } from "./services/api/getAllEvents";
 import "./style.css";
 
-TopHeader();
-Header();
-BottomHeader();
-EventsContainer();
-printEvents();
+export const printHome = () => {
+  const app = document.querySelector("#app");
+  app.innerHTML = "";
+  TopHeader();
+  Header();
+  BottomHeader();
+  EventsContainer();
+  printEvents();
+};
+
+printHome();

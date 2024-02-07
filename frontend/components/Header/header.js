@@ -1,6 +1,7 @@
 import "./header.css";
 import { logo } from "../../data/data";
 import { RegisterForm } from "../RegisterForm/registerForm";
+import { printHome } from "../../main";
 
 const sayHello = () => {
   alert("Hello");
@@ -26,4 +27,7 @@ export const Header = () => {
 
   const signinButton = document.querySelector(".ev-signin-button");
   signinButton.addEventListener("click", RegisterForm);
+
+  const logoButton = document.querySelector('.ev-logo-anchor');
+  logoButton.addEventListener('click', printHome);
 };
