@@ -1,0 +1,115 @@
+.ev-single-event-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+/*  */
+
+.ev-single-event-card {
+  max-width: 400px;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background-color: var(--ev-white-color);
+  transition: all 300ms;
+  box-shadow: 10px 10px 24px -8px rgba(0, 0, 0, 0.42);
+}
+
+.single-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.single-poster {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.single-main h2 {
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  color: var(--ev-secondary-color);
+}
+
+.single-description {
+  color: var(--ev-main-color);
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+.single-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0 1rem;
+}
+
+.single-location {
+  color: var(--ev-orange-color);
+  font-weight: 600;
+}
+
+.single-date {
+  color: var(--ev-orange-color);
+}
+
+.single-participants {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--ev-secondary-color);
+  font-size: 0.8rem;
+  padding: 0 1rem;
+  gap: .7rem;
+}
+
+.single-join {
+  text-align: center;
+  padding: 0.8rem 1.2rem;
+  width: 92%;
+  align-self: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--ev-maroon-color);
+  color: var(--ev-white-color);
+  font-weight: 500;
+}
+.single-join:hover {
+  background-color: var(--ev-main-color);
+  color: var(--ev-white-color);
+}
+.single-event-hidden {
+  display: none;
+}
+
+.single-participants-users,
+.single-participants-attendants {
+  width: 100%;
+  cursor: pointer;
+  border: solid 1px var(--ev-secondary-color);
+  border-radius: 10px;
+}
+
+.users-list-container-name,
+.attendants-list-container-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.users-list-container-name p,
+.attendants-list-container-name p {
+    color: var(--ev-secondary-color);
+    font-size: 1rem;
+    padding: .7rem;
+}
+.user-list li, .attendant-list li{
+    list-style: none;
+    padding-left: 1rem;
+    padding-bottom: .6rem;
+}

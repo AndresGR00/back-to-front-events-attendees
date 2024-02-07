@@ -27,16 +27,17 @@ header {
   gap: 0.7rem;
 }
 .ev-login-button,
-.ev-signin-button {
+.ev-signin-button,
+.ev-logout-button {
   padding: 0.6rem 1.2rem;
   border-radius: 10px;
   font-weight: 600;
 }
-.ev-login-button {
+.ev-login-button, .ev-logout-button {
   border: solid 2px transparent;
   color: var(--ev-white-color);
 }
-.ev-login-button:hover {
+.ev-login-button:hover, .ev-logout-button:hover {
   color: var(--ev-white-color);
   text-decoration: underline;
 }
@@ -58,7 +59,8 @@ header {
     height: 2rem;
   }
   .ev-login-button,
-  .ev-signin-button {
+  .ev-signin-button,
+  .ev-logout-button {
     padding: 0.3rem 1rem;
     font-size: 0.8rem;
   }

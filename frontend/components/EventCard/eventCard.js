@@ -7,8 +7,6 @@ export const EventCard = (
   description,
   location,
   date,
-  usersConfirmed,
-  attendeesConfirmed,
   eventId
 ) => {
   const eventCard = document.createElement("div");
@@ -44,14 +42,14 @@ export const EventCard = (
   dateParagraph.textContent = date;
   dateDiv.appendChild(dateParagraph);
 
-  const participantsDiv = document.createElement("div");
+  /* const participantsDiv = document.createElement("div");
   participantsDiv.classList.add("participants");
   const usersConfirmedParagraph = document.createElement("p");
   usersConfirmedParagraph.textContent = usersConfirmed;
   const attendeesConfirmedParagraph = document.createElement("p");
   attendeesConfirmedParagraph.textContent = attendeesConfirmed;
   participantsDiv.appendChild(usersConfirmedParagraph);
-  participantsDiv.appendChild(attendeesConfirmedParagraph);
+  participantsDiv.appendChild(attendeesConfirmedParagraph); */
 
   const registerLink = document.createElement("a");
   registerLink.href = "#";
@@ -71,7 +69,7 @@ export const EventCard = (
   detailsDiv.appendChild(locationDiv);
   detailsDiv.appendChild(dateDiv);
   mainDiv.appendChild(detailsDiv);
-  mainDiv.appendChild(participantsDiv);
+  //mainDiv.appendChild(participantsDiv);
   mainDiv.appendChild(registerLink);
   eventCard.appendChild(mainDiv);
 

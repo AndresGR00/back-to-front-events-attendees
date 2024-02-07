@@ -15,8 +15,6 @@ export const printEvents = async () => {
         event.description,
         event.location,
         formattedDate,
-        event.usersConfirmed,
-        event.attendeesConfirmed,
         event._id,
       );
     }
@@ -25,7 +23,7 @@ export const printEvents = async () => {
   }
 };
 
-const formatDate = (dateString) => {
+export const formatDate = (dateString) => {
   const date = new Date(dateString);
   const day = date.getDate().toString().padStart(2, "0");
   const month = (date.getMonth() + 1).toString().padStart(2, "0");
