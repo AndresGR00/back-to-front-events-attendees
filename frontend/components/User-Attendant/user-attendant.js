@@ -1,7 +1,7 @@
 import "./user-attendant.css";
 
 export const UserAttendant = (name, email, avatar, confirmedEvents) => {
-  const app = document.querySelector("#app");
+  const container = document.querySelector(".ev-allusers-container");
 
   const userContainer = document.createElement("div");
   userContainer.classList.add("user-container");
@@ -49,5 +49,5 @@ export const UserAttendant = (name, email, avatar, confirmedEvents) => {
     userDetails.appendChild(ul);
     userContainer.appendChild(userDetails);
   }
-  app.appendChild(userContainer);
+  container.appendChild(userContainer);
 };

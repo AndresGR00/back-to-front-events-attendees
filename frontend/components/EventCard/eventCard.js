@@ -1,4 +1,5 @@
 import { getEventById } from "../../services/api/getEventById";
+import { userJoinTheEvent } from "../../services/api/userJoinTheEvent";
 import "./eventCard.css";
 
 export const EventCard = (
@@ -60,7 +61,8 @@ export const EventCard = (
     getEventById(eventId);
   })
   registerLink.addEventListener('click', () => {
-    alert('Has hecho click'); //Lógica Apuntarse
+    const userId = localStorage.getItem('userID');
+    userJoinTheEvent(eventId, userId)
   })
 
   mainDiv.appendChild(posterImg);

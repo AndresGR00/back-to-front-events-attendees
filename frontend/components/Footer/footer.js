@@ -1,3 +1,4 @@
+import { AdminPanel } from "../AdminPanel/adminPanel";
 import "./footer.css";
 
 export const Footer = () => {
@@ -19,6 +20,8 @@ export const Footer = () => {
 
   footer.appendChild(copyrightDiv);
   footer.appendChild(adminPanelDiv);
+
+  adminPanelLink.addEventListener('click', AdminPanel)
 
   app.appendChild(footer);
 };

@@ -23,11 +23,13 @@ export const Header = () => {
     </div>
   </header>`;
 
-  const logoutButton = document.querySelector('.ev-logout-button');
-  logoutButton.addEventListener('click', () => {
+  const logOut = () => {
     localStorage.clear();
-    printHome;
-  })
+    printHome();
+  };
+
+  const logoutButton = document.querySelector(".ev-logout-button");
+  logoutButton.addEventListener("click", logOut);
 
   const loginButton = document.querySelector(".ev-login-button");
   loginButton.addEventListener("click", LoginForm);
@@ -35,6 +37,6 @@ export const Header = () => {
   const signinButton = document.querySelector(".ev-signin-button");
   signinButton.addEventListener("click", RegisterForm);
 
-  const logoButton = document.querySelector('.ev-logo-anchor');
-  logoButton.addEventListener('click', printHome);
+  const logoButton = document.querySelector(".ev-logo-anchor");
+  logoButton.addEventListener("click", printHome);
 };

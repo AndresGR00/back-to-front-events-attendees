@@ -12,8 +12,11 @@ export const submitLoginForm = async (formId, url) => {
           "Content-Type": "multipart/form-data",
         },
       });
-      alert("User Logged");
+      alert("User Logged"); 
       localStorage.setItem('token', response.data.token);
+      localStorage.setItem('userName', response.data.user.name);
+      localStorage.setItem('userID', response.data.user._id);
+      localStorage.setItem('rol', response.data.user.rol);
       printHome();
     } catch (error) {
       console.error(error);

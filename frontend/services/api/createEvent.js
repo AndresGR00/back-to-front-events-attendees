@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const submitFormRegisterUser = async (formId, url) => {
+export const submitFormCreateEvent = async (formId, url) => {
   const form = document.getElementById(formId);
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -11,7 +11,8 @@ export const submitFormRegisterUser = async (formId, url) => {
           "Content-Type": "multipart/form-data", 
         },
       });
-      alert("Registered User");
+      console.log(response);
+      alert("Event Created");
     } catch (error) {
       console.error(error);
     }

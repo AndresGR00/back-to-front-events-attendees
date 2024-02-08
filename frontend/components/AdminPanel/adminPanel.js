@@ -3,6 +3,7 @@ import { Header } from "../Header/header";
 import { Footer } from "../Footer/footer";
 import { logoAdminPanel } from "../../data/data";
 import { printAllUsers } from "../../services/api/getAllUsers";
+import { printAllAttendees } from "../../services/api/getAllAttendees";
 
 export const AdminPanel = () => {
   const app = document.querySelector("#app");
@@ -41,7 +42,5 @@ export const AdminPanel = () => {
   const allUsers = document.querySelector('.all-users');
   allUsers.addEventListener('click', printAllUsers)
   const allAttendees = document.querySelector('.all-attendees');
-  allAttendees.addEventListener('click', () => {
-    console.log('Attendees')
-  })
+  allAttendees.addEventListener('click', printAllAttendees);
 };

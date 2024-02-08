@@ -53,6 +53,7 @@ const createEvent = async (req, res, next) => {
     const createNewEvent = await newEvent.save();
     return res.status(201).json(createNewEvent);
   } catch (error) {
+    console.log(error);
     return res.status(404).json("There was an error creating the event");
   }
 };

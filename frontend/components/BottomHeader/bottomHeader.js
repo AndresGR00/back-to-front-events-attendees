@@ -1,8 +1,5 @@
+import { CreateEventForm } from "../CreateEventForm/createEventForm";
 import "./bottomHeader.css";
-
-const postEventFunction = () => {
-  console.log("Crear un evento");
-};
 
 export const BottomHeader = () => {
   const app = document.querySelector("#app");
@@ -15,7 +12,8 @@ export const BottomHeader = () => {
   link.href = "#";
   link.classList.add("ev-post-event");
   link.textContent = "create a new one";
-  link.addEventListener("click", postEventFunction);
+
+  link.addEventListener('click', CreateEventForm)
   
   paragraph.appendChild(link);
   bottomHeaderContainer.appendChild(paragraph);

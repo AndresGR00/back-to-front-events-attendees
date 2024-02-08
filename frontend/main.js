@@ -5,7 +5,6 @@ import { EventsContainer } from "./components/EventsContainer/EventsContainer";
 import { printEvents } from "./services/api/getAllEvents";
 import "./style.css";
 import { Footer } from "./components/Footer/footer";
-import { AdminPanel } from "./components/AdminPanel/adminPanel";
 
 export const printHome = () => {
   const app = document.querySelector("#app");
@@ -18,5 +17,4 @@ export const printHome = () => {
   Footer();
 };
 
-/* printHome(); */
-AdminPanel();
+printHome();
