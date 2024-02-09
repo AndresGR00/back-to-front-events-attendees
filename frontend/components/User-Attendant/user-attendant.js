@@ -43,7 +43,7 @@ export const UserAttendant = (name, email, avatar, confirmedEvents) => {
 
     confirmedEvents.forEach((confirmedEvent) => {
       const li = document.createElement("li");
-      li.textContent = confirmedEvent;
+      li.textContent = JSON.stringify(confirmedEvent.title);
       ul.appendChild(li);
     });
     userDetails.appendChild(ul);

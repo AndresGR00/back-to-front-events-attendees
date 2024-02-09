@@ -1,11 +1,13 @@
 import { submitFormCreateEvent } from "../../services/api/createEvent";
 import { Footer } from "../Footer/footer";
 import { Header } from "../Header/header";
+import { TopHeader } from "../TopHeader/TopHeader";
 import "./createEventForm.css";
 
 export const CreateEventForm = () => {
   const app = document.querySelector("#app");
   app.innerHTML = "";
+  TopHeader();
   Header();
 
   const form = document.createElement("form");
@@ -59,6 +61,7 @@ export const CreateEventForm = () => {
   descriptionInput.type = "text";
   descriptionInput.name = "description";
   descriptionInput.id = "description";
+  descriptionInput.placeholder = "Description";
   descriptionInput.required = false;
   descriptionInput.classList.add("ev-register-form-avatar");
 

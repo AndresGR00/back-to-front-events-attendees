@@ -4,10 +4,12 @@ import { Footer } from "../Footer/footer";
 import { logoAdminPanel } from "../../data/data";
 import { printAllUsers } from "../../services/api/getAllUsers";
 import { printAllAttendees } from "../../services/api/getAllAttendees";
+import { TopHeader } from "../TopHeader/TopHeader";
 
 export const AdminPanel = () => {
   const app = document.querySelector("#app");
   app.innerHTML = "";
+  TopHeader();
   Header();
 
   const adminContainer = document.createElement("div");

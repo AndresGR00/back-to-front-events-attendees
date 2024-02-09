@@ -51,7 +51,7 @@ const registerUser = async (req, res, next) => {
       email: req.body.email,
       password: req.body.password,
       avatar: req.body.avatar,
-      rol: /* "isUser" */ req.body.rol,
+      rol: "isUser" /* req.body.rol */,
       confirmedEvents: req.body.confirmedEvents
     });
     const userDuplicated = await User.findOne({ email: req.body.email });
@@ -79,7 +79,7 @@ const loginUser = async (req, res, next) => {
       const token = generateSign(user._id);
       return res.status(200).json({ user, token });
     } else {
-      return res.status(400).json("Email or password is incorrect");
+      return res.status(400).json("Email or password is incorrect HOLA 2");
     }
   } catch (error) {
     return res.status(400).json("Error logging in");

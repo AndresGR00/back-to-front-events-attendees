@@ -62,7 +62,10 @@ export const EventCard = (
   })
   registerLink.addEventListener('click', () => {
     const userId = localStorage.getItem('userID');
-    userJoinTheEvent(eventId, userId)
+    if(!userId){
+      alert('You need to be logged in');
+    }
+    userJoinTheEvent(eventId, userId) //Lógica de unirse
   })
 
   mainDiv.appendChild(posterImg);

@@ -6,8 +6,8 @@ const { uploadAvatars } = require('../../middlewares/uploadImgCloudinary');
 userRouter.get('/all-users', userController.getAllUser);
 userRouter.post('/register', uploadAvatars.fields([{name: "avatar"}]), userController.registerUser); //Auth?
 userRouter.post('/login', uploadAvatars.none(), userController.loginUser) //Auth?
-userRouter.patch('/update-avatar/:id',  uploadAvatars.fields([{name: "avatar"}]), userController.updateAvatar);
-userRouter.delete('/delete-user/:id', userController.removeUser);
+userRouter.patch('/update-avatar/:id', [isAuth],  uploadAvatars.fields([{name: "avatar"}]), userController.updateAvatar);
+userRouter.delete('/delete-user/:id', [isAdmin], userController.removeUser);
 
 module.exports = userRouter;
 

@@ -22,8 +22,13 @@ const userSchema = new mongoose.Schema(
     collection: "users",
   }
 );
-userSchema.pre("save", function () {
+
+userSchema.pre("save", function (next) {
+  if (!this.isModified("password")) {
+    return next();
+  }
   this.password = bcrypt.hashSync(this.password, 10);
+  next();
 });
 
 const User = mongoose.model("User", userSchema, "users");

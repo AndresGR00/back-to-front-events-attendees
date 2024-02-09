@@ -21,7 +21,18 @@ export const Footer = () => {
   footer.appendChild(copyrightDiv);
   footer.appendChild(adminPanelDiv);
 
-  adminPanelLink.addEventListener('click', AdminPanel)
+  const userId = localStorage.getItem("userID");
+  const userRol = localStorage.getItem("rol");
+  
+  adminPanelLink.addEventListener("click", () => {
+    if (!userId) {
+      alert("You need to be logged in");
+    } else if (userRol !== "isAdmin") {
+      alert("You need to be an admin");
+    } else {
+      AdminPanel();
+    }
+  });
 
   app.appendChild(footer);
 };

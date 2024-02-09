@@ -1,11 +1,13 @@
 import { formatDate } from "../../services/api/getAllEvents";
 import { Footer } from "../Footer/footer";
 import { Header } from "../Header/header";
+import { TopHeader } from "../TopHeader/TopHeader";
 import "./singleEvent.css";
 
 export const SingleEventContainer = () => {
   const app = document.querySelector("#app");
   app.innerHTML = "";
+  TopHeader();
   Header();
   const singleEventDiv = document.createElement("div");
   singleEventDiv.className = "ev-single-event-container";

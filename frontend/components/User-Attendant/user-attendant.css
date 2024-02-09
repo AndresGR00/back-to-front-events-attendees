@@ -1,4 +1,5 @@
 .user-container {
+  min-width: 300px;
   max-width: 300px;
   background-color: #fff;
   border-radius: 10px;
@@ -43,6 +44,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  color: var(--ev-secondary-color);
 }
 .user-details li {
   margin-bottom: 5px;

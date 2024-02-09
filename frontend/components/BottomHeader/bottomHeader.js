@@ -13,7 +13,15 @@ export const BottomHeader = () => {
   link.classList.add("ev-post-event");
   link.textContent = "create a new one";
 
-  link.addEventListener('click', CreateEventForm)
+  const userId = localStorage.getItem('userID');
+
+  link.addEventListener('click', () => {
+    if (!userId) {
+      alert('You need to be logged in');
+    } else {
+      CreateEventForm();
+    }
+  });
   
   paragraph.appendChild(link);
   bottomHeaderContainer.appendChild(paragraph);
