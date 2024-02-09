@@ -9,7 +9,7 @@ export const getEventById = async (id) => {
     SingleEventContainer();
     SingleEvent(event);
   } catch (error) {
-    console.log(error);
+    alert('Something went wrong with the event request');
   }
 };
 

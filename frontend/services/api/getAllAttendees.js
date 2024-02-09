@@ -17,6 +17,6 @@ export const printAllAttendees = async () => {
       );
     }
   } catch (error) {
-    console.log(error);
+    alert('Something went wrong with the attendees request');
   }
 };

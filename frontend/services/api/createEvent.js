@@ -26,7 +26,7 @@ export const submitFormCreateEvent = async (formId, url) => {
       console.log(response);
       alert("Event Created");
     } catch (error) {
-      console.error(error);
+      alert('Something went wrong when creating the event');
     }
   });
 };

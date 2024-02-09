@@ -17,6 +17,6 @@ export const userJoinTheEvent = async (eventId, userId) => {
     await axios.post(URL_ADD_EVENT);
     alert("User signed up for the event");
   } catch (error) {
-    console.log(error);
+    alert("You are already registered for this event");
   }
 };

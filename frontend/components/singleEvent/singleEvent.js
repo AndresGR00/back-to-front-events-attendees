@@ -1,4 +1,5 @@
 import { formatDate } from "../../services/api/getAllEvents";
+import { userJoinTheEvent } from "../../services/api/userJoinTheEvent";
 import { Footer } from "../Footer/footer";
 import { Header } from "../Header/header";
 import { TopHeader } from "../TopHeader/TopHeader";
@@ -66,6 +67,15 @@ const userListTrigger = singleEventCard.querySelector(".users-list-container-nam
 const userList = singleEventCard.querySelector(".user-list");
 const attendantsListTrigger = singleEventCard.querySelector(".attendants-list-container-name");
 const attendantsList = singleEventCard.querySelector(".attendant-list");
+const registerLink = document.querySelector('.single-join');
+
+registerLink.addEventListener('click', () => {
+  const userId = localStorage.getItem('userID');
+  if(!userId){
+    alert('You need to be logged in');
+  }
+  userJoinTheEvent(event._id, userId) //Lógica de unirse
+})
 
 userListTrigger.addEventListener("click", () => {
   userList.classList.toggle("single-event-hidden");

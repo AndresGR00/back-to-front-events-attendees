@@ -13,7 +13,7 @@ export const submitFormRegisterUser = async (formId, url) => {
       });
       alert("Registered User");
     } catch (error) {
-      console.error(error);
+      alert('This user is already registered')
     }
   });
 };

@@ -19,7 +19,7 @@ export const printEvents = async () => {
       );
     }
   } catch (error) {
-    console.log(error);
+    alert('Something went wrong with the events request');
   }
 };
 

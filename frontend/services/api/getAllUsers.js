@@ -12,6 +12,6 @@ export const printAllUsers = async () => {
       UserAttendant(user.name, user.email, user.avatar, user.confirmedEvents);
     }
   } catch (error) {
-    console.log(error);
+    alert('Something went wrong with the users request');
   }
 };
