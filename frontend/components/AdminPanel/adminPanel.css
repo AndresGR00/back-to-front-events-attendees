@@ -3,8 +3,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
+  gap: 2rem;
+  padding: 3rem;
+  margin: 1.65rem 0;
+  
 }
 
 .all-users,
@@ -15,16 +17,16 @@
   justify-content: center;
   background-color: var(--ev-main-color);
   border-radius: 10px;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   cursor: pointer;
 }
 
 .admin-container img {
-  width: 120px;
+  width: 170px;
 }
 .admin-container p {
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   color: var(--ev-secondary-color);
 }

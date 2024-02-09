@@ -1,3 +1,7 @@
+#registration-form{
+  margin: 2.7rem auto;
+}
+
 .ev-register-form {
   display: flex;
   flex-direction: column;

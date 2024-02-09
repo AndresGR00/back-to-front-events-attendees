@@ -62,6 +62,9 @@ header {
   .ev-signin-button,
   .ev-logout-button {
     padding: 0.3rem 1rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+  }
+  .ev-bottom-header-container p{
+    font-size: .8rem;
   }
 }
