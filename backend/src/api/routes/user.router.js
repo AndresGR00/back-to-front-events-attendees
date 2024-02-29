@@ -4,6 +4,7 @@ const { isAuth, isAdmin } = require('../../middlewares/auth');
 const { uploadAvatars } = require('../../middlewares/uploadImgCloudinary');
 
 userRouter.get('/all-users', userController.getAllUser);
+userRouter.get('/user/:id', userController.getUserById);
 userRouter.post('/register', uploadAvatars.fields([{name: "avatar"}]), userController.registerUser); //Auth?
 userRouter.post('/login', uploadAvatars.none(), userController.loginUser) //Auth?
 userRouter.patch('/update-avatar/:id', [isAuth],  uploadAvatars.fields([{name: "avatar"}]), userController.updateAvatar);

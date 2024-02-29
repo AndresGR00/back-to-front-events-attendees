@@ -45,7 +45,7 @@ const createEvent = async (req, res, next) => {
     });
     const eventDuplicated = await Event.findOne({ title: req.body.title });
     if (eventDuplicated) {
-      return res.status(400).json("This event already exists");
+      return res.status(400).json({error: "This event already exists"});
     }
     if (req.files && req.files.poster) {
       newEvent.poster = req.files.poster[0].path;
@@ -54,7 +54,7 @@ const createEvent = async (req, res, next) => {
     return res.status(201).json(createNewEvent);
   } catch (error) {
     console.log(error);
-    return res.status(404).json("There was an error creating the event");
+    return res.status(404).json({error: "There was an error creating the event"});
   }
 };
 
