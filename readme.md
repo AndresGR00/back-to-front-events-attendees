@@ -10,18 +10,18 @@ The business idea behind this is to allow people who are registered on the platf
 ## To be taken into account
 
 To be able to display the events in the Home page, they must first be created in the database:
-![Events](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194548_icfpbq.png);
+![Events](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194548_icfpbq.png)
 
 To be able to create events you must be registered on the platform. This unlocks this option under the header:
-![Create Events](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194635_ro6zbj.png);
+![Create Events](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194635_ro6zbj.png)
 
 Once you are logged in as an administrator, you can access the administrator panel located in the footer:
-![Admin panel link](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194647_ohed9t.png);
+![Admin panel link](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194647_ohed9t.png)
 
 From here we can manage users and attendees:
-![Admin panel](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194659_bohase.png);
+![Admin panel](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194659_bohase.png)
 Sample of attendees (Please note that this information does not come from the back and serves only as an example). To test the full functionality it has to be done with users.
-![Admin panel](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233583/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194712_lsk173.png);
+![Admin panel](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233583/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194712_lsk173.png)
 
 
 
