@@ -1,0 +1,70 @@
+/* Estilos para la sección hero */
+#hero {
+  background-image: url("https://res.cloudinary.com/dbinlquvz/image/upload/v1709230432/Proyecto_10/imagen-hero-_1__1_6000x3840_j7xmkz.webp");
+  background-size: cover;
+  color: var(--ev-white-color);
+  text-align: center;
+  padding: 100px 20px;
+  width: 100%;
+
+}
+
+#hero .container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+#hero h2 {
+  font-size: 36px;
+}
+
+#hero p {
+  font-size: 18px;
+}
+
+#hero .btn {
+  font-size: 18px;
+  border: solid 2px var(--ev-maroon-color);
+  background-color: var(--ev-maroon-color);
+  color: var(--ev-white-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 500;
+  max-width: 200px;
+}
+
+#hero .btn:hover {
+  border: solid 2px var(--ev-main-color);
+  background-color: var(--ev-main-color);
+}
+
+
+#about {
+  padding: 50px 20px;
+  width: 100%;
+}
+
+#about .container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+#about h2 {
+  font-size: 36px;
+  color: var(--ev-secondary-color);
+}
+
+#about p {
+  font-size: 18px;
+  color: var(--ev-secondary-color);
+}

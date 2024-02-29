@@ -1,0 +1,12 @@
+.ev-top-header-container{
+    display: flex;
+    justify-content: flex-end;
+    padding: .5rem 2rem;
+    color: var(--ev-white-color);
+    background-color: var(--ev-main-color);
+    gap: .3rem;
+}
+
+.ev-top-header-container p, .ev-top-header-container span{ 
+    font-size: .7rem;
+}

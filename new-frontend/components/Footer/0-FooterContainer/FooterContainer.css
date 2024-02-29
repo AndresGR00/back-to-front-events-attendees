@@ -1,0 +1,7 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--ev-orange-color);
+    width: 100%;
+  }
