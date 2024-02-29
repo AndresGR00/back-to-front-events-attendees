@@ -20,6 +20,7 @@ Once you are logged in as an administrator, you can access the administrator pan
 
 From here we can manage users and attendees:
 ![Admin panel](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233582/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194659_bohase.png)
+
 Sample of attendees (Please note that this information does not come from the back and serves only as an example). To test the full functionality it has to be done with users.
 ![Admin panel](https://res.cloudinary.com/dbinlquvz/image/upload/v1709233583/Proyecto_10/Readme/Captura_de_pantalla_2024-02-29_194712_lsk173.png)
 
