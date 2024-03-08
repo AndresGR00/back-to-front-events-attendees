@@ -1,5 +1,6 @@
 import { printHome } from "../../main";
 import { submitFormCreateEvent } from "../../services/api/createEvent";
+import { createInput } from "../InputComponent";
 import "./createEventForm.css";
 
 export const CreateEventForm = () => {
@@ -11,13 +12,14 @@ export const CreateEventForm = () => {
   form.enctype = "multipart/form-data";
   form.classList.add("ev-register-form");
 
-  const titleInput = document.createElement("input");
-  titleInput.type = "text";
-  titleInput.name = "title";
-  titleInput.id = "title";
-  titleInput.placeholder = "Title";
-  titleInput.required = true;
-  titleInput.classList.add("ev-register-form-name");
+  const titleInput = createInput({
+    inputType: "text",
+    inputName: "title",
+    inputId: "title",
+    inputPlaceholder: "Title",
+    inputRequired: true,
+    inputClassName: "ev-register-form-name",
+  });
 
   const titleLabel = document.createElement("label");
   titleLabel.htmlFor = "title";
@@ -25,13 +27,14 @@ export const CreateEventForm = () => {
   form.appendChild(titleLabel);
   form.appendChild(titleInput);
 
-  const dateInput = document.createElement("input");
-  dateInput.type = "date";
-  dateInput.name = "date";
-  dateInput.id = "date";
-  dateInput.placeholder = "Date";
-  dateInput.required = true;
-  dateInput.classList.add("ev-register-form-email");
+  const dateInput = createInput({
+    inputType: "date",
+    inputName: "date",
+    inputId: "date",
+    inputPlaceholder: "Date",
+    inputRequired: true,
+    inputClassName: "ev-register-form-email",
+  });
 
   const dateLabel = document.createElement("label");
   dateLabel.htmlFor = "date";
@@ -39,13 +42,14 @@ export const CreateEventForm = () => {
   form.appendChild(dateLabel);
   form.appendChild(dateInput);
 
-  const locationInput = document.createElement("input");
-  locationInput.type = "text";
-  locationInput.name = "location";
-  locationInput.id = "location";
-  locationInput.placeholder = "Location";
-  locationInput.required = true;
-  locationInput.classList.add("ev-register-form-password");
+  const locationInput = createInput({
+    inputType: "text",
+    inputName: "location",
+    inputId: "location",
+    inputPlaceholder: "Location",
+    inputRequired: true,
+    inputClassName: "ev-register-form-password",
+  });
 
   const locationLabel = document.createElement("label");
   locationLabel.htmlFor = "location";
@@ -53,13 +57,14 @@ export const CreateEventForm = () => {
   form.appendChild(locationLabel);
   form.appendChild(locationInput);
 
-  const descriptionInput = document.createElement("input");
-  descriptionInput.type = "text";
-  descriptionInput.name = "description";
-  descriptionInput.id = "description";
-  descriptionInput.placeholder = "Description";
-  descriptionInput.required = false;
-  descriptionInput.classList.add("ev-register-form-avatar");
+  const descriptionInput = createInput({
+    inputType: "text",
+    inputName: "description",
+    inputId: "description",
+    inputPlaceholder: "Description",
+    inputRequired: true,
+    inputClassName: "ev-register-form-avatar",
+  });
 
   const descriptionLabel = document.createElement("label");
   descriptionLabel.htmlFor = "description";
@@ -67,13 +72,14 @@ export const CreateEventForm = () => {
   form.appendChild(descriptionLabel);
   form.appendChild(descriptionInput);
 
-  const posterInput = document.createElement("input");
-  posterInput.type = "file";
-  posterInput.name = "poster";
-  posterInput.id = "poster";
-  posterInput.accept = "image/*";
-  posterInput.required = false;
-  posterInput.classList.add("ev-register-form-avatar");
+  const posterInput = createInput({
+    inputType: "file",
+    inputName: "poster",
+    inputId: "poster",
+    inputAccept: "image/*",
+    inputRequired: false,
+    inputClassName: "ev-register-form-avatar",
+  });
 
   const posterLabel = document.createElement("label");
   posterLabel.htmlFor = "poster";
